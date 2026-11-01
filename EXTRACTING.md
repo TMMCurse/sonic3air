@@ -23,7 +23,7 @@
 
 - When you find those get the .html and replace it with one of those files (example: https://projects.sappharad.com/s3air_ios/20240202_beta/sonic3air_web.html -> https://projects.sappharad.com/s3air_ios/20240202_beta/react.js)
 
-  > [!NOTE]
-  > You will have to do this over and over again until you download every single one of them, and if it doesn't automatically download then right click anywhere and click 'Save as..'
+ > [!NOTE]
+> You will have to do this over and over again until you download every single one of them, and if it doesn't automatically download then right click anywhere and click 'Save as..'
 
 - Once you download all the files your done! Just host it to a server and you can play it ( i dont know how to do it when writing this so just figure it out yourself )
