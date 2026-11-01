@@ -2,6 +2,11 @@
 
 WebAssembly Port of  "Sonic 3 - Angel Island Revisited", a fan-made remaster of Sonic 3 & Knuckles.
 
+Github Website: https://tmmcurse.github.io/sonic3air/sonic3air-v20240202-r2/sonic3air_web.html
+
+> [!NOTE]
+> You WILL need the ROM to Sonic 3 A.I.R. so uhhh yeah
+
 Main Project homepage: https://sonic3air.org/
 > Check the Releases Page for the Revision 2 Update
 
