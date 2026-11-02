@@ -41,7 +41,7 @@ To do this using Python, you do by
 Also, you still need to have Sonic_Knuckles_wSonic3.bin as of now, but this repo will have it for you, and I will try and see if I can change it to just include it within the same server it is hosted on
 
 ### To Extract the Assets for Yourself
-Read [EXTRACTING.md](https://github.com/burnedpopcorn/sonic3air-webport/blob/main/EXTRACTING.md) for that (if you really want to)
+Read [EXTRACTING.md](https://github.com/tmmcurse/sonic3air/blob/main/EXTRACTING.md) for that (if you really want to)
 
 ### MODS!
 This port does have A.I.R. mod support, but you can only access the mods folder by exiting the game within the main menu, and then restarting it after you uploaded your mod of choice within the mod folder
