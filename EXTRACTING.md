@@ -1,4 +1,4 @@
-## Extracting the assets from the official web port
+### Extracting the assets from the official web port
  How I did it:
  
 - First go to their website (https://projects.sappharad.com/s3air_ios/20240202_beta/sonic3air_web.html)
