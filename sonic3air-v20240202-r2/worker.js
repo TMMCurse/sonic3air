@@ -1,4 +1,4 @@
-var _cacheName = 'sonic3air-v20260328';
+var _cacheName = 'sonic3air-v20240202';
 var _cacheFiles = [
 	'sonic3air_web.html',
 	'sonic3air_web.js',
