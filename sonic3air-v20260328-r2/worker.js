@@ -6,6 +6,10 @@ var _cacheFiles = [
 	'loader.js',
 	'manifest.json',
 	'icon.png'
+	'browserfs.min.js',
+	'filemanager.js',
+	'fileManagerRuntime.js',
+	'react.js'
 ];
 
 self.addEventListener('install', (e) => {
