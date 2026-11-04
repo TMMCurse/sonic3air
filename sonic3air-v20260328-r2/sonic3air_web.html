@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<!-- saved from url=(0073)https://projects.sappharad.com/s3air_ios/20260328_beta/sonic3air_web.html -->
-<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-
-<meta name="viewport" content="initial-scale=1, viewport-fit=cover, width=device-width">
+<!doctype html>
+<html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta content="text/html; charset=utf-8"http-equiv=Content-Type>
+<meta name="viewport" content="initial-scale=1, viewport-fit=cover, width=device-width"/>
 <title>Sonic 3 A.I.R.</title>
-<link rel="apple-touch-icon" sizes="256x256" href="https://projects.sappharad.com/s3air_ios/20260328_beta/icon.png">
-<link rel="manifest" href="https://projects.sappharad.com/s3air_ios/20260328_beta/manifest.json">
+<link rel="apple-touch-icon" sizes="256x256" href="icon.png">
+<link rel="manifest" href="manifest.json">
 <style>body{background:black;color:white;font-family:arial;margin:0;padding:none;overflow:hidden;-webkit-user-select:none;}.emscripten{padding-right:0;margin-left:auto;margin-right:auto;display:block}div.emscripten{text-align:center}div.emscripten_border{border:0 none;}canvas.emscripten{border:0 none;background-color:#000}.spinner{height:30px;width:30px;margin:0;margin-top:20px;margin-left:20px;display:inline-block;vertical-align:top;-webkit-animation:rotation .8s linear infinite;-moz-animation:rotation .8s linear infinite;-o-animation:rotation .8s linear infinite;animation:rotation .8s linear infinite;border-left:5px solid #ebebeb;border-right:5px solid #ebebeb;border-bottom:5px solid #ebebeb;border-top:5px solid #787878;border-radius:100%;background-color:#bdd72e}@-webkit-keyframes rotation{from{-webkit-transform:rotate(0)}to{-webkit-transform:rotate(360deg)}}@-moz-keyframes rotation{from{-moz-transform:rotate(0)}to{-moz-transform:rotate(360deg)}}@-o-keyframes rotation{from{-o-transform:rotate(0)}to{-o-transform:rotate(360deg)}}@keyframes rotation{from{transform:rotate(0)}to{transform:rotate(360deg)}}#status{display:inline-block;vertical-align:top;margin-top:30px;margin-left:20px;font-size:1em;font-weight:700;color:#787878}#progress{height:20px;width:250px}
 .hidden{display:none !important;}
 .file_select{
@@ -442,25 +442,25 @@ function fileManagerExportFile(filePath){
 </script>
 </head>
 <body>
-<div id="startup" style="display: none;"><h2>Loading...</h2></div>
-<div class="spinner pageUI" id="spinner" style="display: none;"></div>
-<div class="emscripten pageUI" id="status">Downloading...</div>
-<div class="emscripten pageUI"><progress id="progress" max="200" value="0" hidden=""></progress></div>
-<div class="file_select">
+<div id="startup"><h2>Loading...</h2></div>
+<div class="spinner pageUI hidden" id=spinner></div>
+<div class="emscripten pageUI hidden" id=status>Downloading...</div>
+<div class="emscripten pageUI hidden"><progress hidden id=progress max=100 value=0></progress></div>
+<div class="file_select hidden">
 	<span>To run the game, Sonic 3 A.I.R. requires an original copy of the Sonic 3 and Knuckles ROM. 
-	You can get this file by purchasing the game on Steam for Windows, Mac or Linux.</span><br>
-	<span id="s3kPromptMessage">Please provide Sonic_Knuckles_wSonic3.bin:</span><br>
+	You can get this file by purchasing the game on Steam for Windows, Mac or Linux.</span><br/>
+	<span id="s3kPromptMessage">Please provide Sonic_Knuckles_wSonic3.bin:</span><br/>
 	<label for="fileSelector" class="fileSelector">
 	    Select File...
 	</label>
-	<input id="fileSelector" class="fileSelector" type="file" onchange="installS3kFile(this);">
+	<input id="fileSelector" class="fileSelector" type="file" onChange="installS3kFile(this);"/>
 </div>
 <div class="file_upload hidden">
 	<div style="margin-bottom: 15px; font-size: 1.2em;">Select a file to import:</div>
 	<label for="fileUploadInput" id="fileUpload">
 	    Select File...
 	</label>
-	<input id="fileUploadInput" type="file" onchange="addFile(this);">
+	<input id="fileUploadInput" type="file" onChange="addFile(this);"/>
 	<button type="button" onclick="cancelFileSelect()" class="cancelButton">Cancel</button>
 </div>
 <div class="restart hidden">
@@ -475,21 +475,23 @@ function fileManagerExportFile(filePath){
 	than the original MegaDrive or Genesis console was capable of. On this device the remastered music 
 	is not included by default and you can install it here. Installing this may reduce the stability 
 	of the game on devices with low memory causing stuttering or the game to no longer load at all.</div>
-	<br>
+	<br/>
 	<button type="button" onclick="hideExtraDownloads()">Go Back</button> 
-	<br>
+	<br/>
 	<button type="button" onclick="downloadRemastered()">Install Anyway</button>
 </div>
 <div class="extraDownloadsProgress hidden">
 	<!-- I could have just reused the emscripten progress stuff above, but it may benefit me later to keep it separate. -->
-	<div id="extraStatus">Downloading...</div>
-	<div><progress id="extraProgress" max="100" value="0"></progress></div>
+	<div id=extraStatus>Downloading...</div>
+	<div><progress id=extraProgress max=100 value=0></progress></div>
 </div>
 <div id="root" class="hidden"></div>
 <div id="gameView" class="emscripten_border">
-	<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+	<canvas class="emscripten" id=canvas oncontextmenu=event.preventDefault() tabindex=-1></canvas>
 </div>
-
+<div id="ios_workaround" class="hidden" onclick="hideIOSoverlay()">
+	Tap to Start
+</div>
 <script>
 var statusElement = document.getElementById("status"),
     progressElement = document.getElementById("progress"),
@@ -546,6 +548,6 @@ Module.setStatus("Downloading..."), window.onerror = function(e) {
     }
 }
 </script>
-<script async="" src="./sonic3air_web_files/sonic3air_web.js.download"></script>
-
-<script async="" src="./sonic3air_web_files/loader.js.download"></script></body></html>
+<script async src=sonic3air_web.js></script>
+</body>
+</html>
